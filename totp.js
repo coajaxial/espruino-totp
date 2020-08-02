@@ -1,5 +1,5 @@
-var HMAC = require('https://raw.githubusercontent.com/coajaxial/espruino-hmac/master/hmac.js');
-var base32 = require('https://raw.githubusercontent.com/coajaxial/espruino-base32/master/base32.js');
+const HMAC = require('https://raw.githubusercontent.com/coajaxial/espruino-hmac/master/hmac.js');
+const base32 = require('https://raw.githubusercontent.com/coajaxial/espruino-base32/master/base32.js');
 
 function generateOtp(hmac, digits) {
   "compiled";
@@ -12,7 +12,7 @@ function generateOtp(hmac, digits) {
   return result;
 }
 
-var TOTP = function(secret) {
+const TOTP = function(secret) {
   this.hmac = new HMAC.FixedSHA1(base32.decode(secret), 8);
   this.message = new Uint8Array(8);
 };
