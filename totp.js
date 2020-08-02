@@ -12,7 +12,7 @@ function generateOtp(hmac, digits) {
   return result;
 }
 
-var TOTP = function() {
+var TOTP = function(secret) {
   this.hmac = new HMAC.FixedSHA1(base32.decode(secret), 8);
   this.message = new Uint8Array(8);
 };
